@@ -5,13 +5,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sixth Sense | Adaptive Safety for Independent Living</title>
+
+    <!-- Google Fonts - Modern typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
+
     <style>
-        /* RESET */
+        /* ========================================
+           GLOBAL RESET & BASE STYLES
+           ======================================== */
         * {
             margin: 0;
             padding: 0;
@@ -20,8 +25,10 @@
 
         body {
             font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #1b1b1b; /* darker neutral background to make the soft colors pop */
-            color: #F5E9A0; /* main color */
+            background: #1b1b1b;
+            /* darker neutral background to make the soft colors pop */
+            color: #F5E9A0;
+            /* main color */
             line-height: 1.7;
             overflow-x: hidden;
         }
@@ -32,13 +39,17 @@
             transition: opacity 0.2s ease;
         }
 
-        /* ABSTRACT GEOMETRIC ELEMENTS */
+        /* ========================================
+           ABSTRACT BACKGROUND ELEMENTS
+           Diagonal lines and dots that respond to cursor movement
+           ======================================== */
         .shape {
             position: absolute;
             z-index: -1;
             pointer-events: none;
         }
 
+        /* Diagonal line 1 - Top left, blue gradient */
         .shape1 {
             width: clamp(300px, 60vw, 600px);
             height: 2px;
@@ -50,6 +61,7 @@
             transition: transform 0.3s ease-out;
         }
 
+        /* Diagonal line 2 - Middle right, cyan gradient */
         .shape2 {
             width: clamp(250px, 40vw, 400px);
             height: 1px;
@@ -61,6 +73,7 @@
             transition: transform 0.3s ease-out;
         }
 
+        /* Diagonal line 3 - Bottom left, purple gradient */
         .shape3 {
             width: clamp(300px, 50vw, 500px);
             height: 1px;
@@ -72,6 +85,7 @@
             transition: transform 0.3s ease-out;
         }
 
+        /* Diagonal line 4 - Middle right, blue gradient */
         .shape4 {
             width: clamp(200px, 35vw, 350px);
             height: 1px;
@@ -83,7 +97,7 @@
             transition: transform 0.3s ease-out;
         }
 
-        /* Accent dots */
+        /* Accent dots scattered across the page */
         .dot {
             position: absolute;
             width: clamp(3px, 0.5vw, 4px);
@@ -110,7 +124,10 @@
             right: 12%;
         }
 
-        /* NAV */
+        /* ========================================
+           NAVIGATION BAR
+           Fixed header with logo and navigation links
+           ======================================== */
         nav {
             width: 100%;
             padding: 28px 6%;
@@ -157,7 +174,10 @@
             color: #B78D9C;
         }
 
-        /* HERO */
+        /* ========================================
+           HERO SECTION
+           Full viewport height intro section
+           ======================================== */
         header {
             min-height: 100vh;
             display: flex;
@@ -189,6 +209,7 @@
             color: #F5E9A0;
         }
 
+        /* Ghost button style CTA */
         .cta-btn {
             padding: 18px 42px;
             font-size: 15px;
@@ -210,7 +231,10 @@
             transform: translateY(-2px);
         }
 
-        /* SECTION */
+        /* ========================================
+           SECTION LAYOUT
+           Reusable section styles
+           ======================================== */
         section {
             padding: 140px 6%;
             position: relative;
@@ -236,7 +260,10 @@
             color: #F5E9A0;
         }
 
-        /* FEATURES */
+        /* ========================================
+           FEATURES GRID
+           Minimal card design with hover effects
+           ======================================== */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -254,6 +281,7 @@
             overflow: hidden;
         }
 
+        /* Animated line sweep effect on hover */
         .feature-box::before {
             content: '';
             position: absolute;
@@ -291,7 +319,10 @@
             color: #F5E9A0;
         }
 
-        /* TECH / DIAGONAL */
+        /* ========================================
+           DIAGONAL TECH SECTION
+           Skewed section with tech details
+           ======================================== */
         .diagonal {
             position: relative;
             padding: 160px 6%;
@@ -300,8 +331,10 @@
             border-bottom: 1px solid rgba(245, 233, 160, 0.2);
             margin: 160px 0;
             transform: skewY(-2deg);
+            /* Creates diagonal effect */
         }
 
+        /* Un-skew child elements to keep content straight */
         .diagonal>* {
             transform: skewY(2deg);
         }
@@ -323,6 +356,7 @@
             transition: all 0.3s ease;
         }
 
+        /* Sideways slide effect on hover */
         .tech-item:hover {
             background: rgba(183, 141, 156, 0.1);
             border-color: rgba(245, 233, 160, 0.4);
@@ -346,7 +380,9 @@
             color: #F5E9A0;
         }
 
-        /* APP PREVIEW */
+        /* ========================================
+           APP PREVIEW SECTION
+           ======================================== */
         .app-img {
             width: 100%;
             max-width: 320px;
@@ -356,7 +392,9 @@
             opacity: 0.9;
         }
 
-        /* FOOTER */
+        /* ========================================
+           FOOTER
+           ======================================== */
         footer {
             text-align: center;
             padding: 100px 6% 80px;
@@ -368,7 +406,9 @@
             color: #F5E9A0;
         }
 
-        /* Responsive adjustments (unchanged for now, but colors cascade automatically) */
+        /* ========================================
+           RESPONSIVE DESIGN - TABLET
+           ======================================== */
         @media(max-width: 820px) {
             nav {
                 padding: 24px 5%;
@@ -417,6 +457,9 @@
             }
         }
 
+        /* ========================================
+           RESPONSIVE DESIGN - MOBILE
+           ======================================== */
         @media(max-width: 480px) {
             nav .logo {
                 font-size: 18px;
@@ -443,6 +486,7 @@
                 margin: 80px 0;
             }
 
+            /* Reduce background element opacity on mobile */
             .shape {
                 opacity: 0.15;
             }
@@ -459,6 +503,7 @@
                 width: 350px;
             }
 
+            /* Reduce hover movement on mobile */
             .tech-item:hover {
                 transform: translateX(4px);
             }
@@ -467,6 +512,10 @@
 </head>
 
 <body>
+    <!-- ========================================
+         BACKGROUND DECORATIVE ELEMENTS
+         Diagonal lines and dots with parallax effect
+         ======================================== -->
     <div class="shape shape1"></div>
     <div class="shape shape2"></div>
     <div class="shape shape3"></div>
@@ -475,6 +524,9 @@
     <div class="dot dot2"></div>
     <div class="dot dot3"></div>
 
+    <!-- ========================================
+         NAVIGATION BAR
+         ======================================== -->
     <nav>
         <div class="logo">
             <img src="image.psd7.png" alt="Sixth Sense Logo">
@@ -486,95 +538,185 @@
         </ul>
     </nav>
 
+    <!-- ========================================
+         HERO SECTION
+         Main landing area with headline and CTA
+         ======================================== -->
     <header>
         <h1>Adaptive Safety for Independent Living</h1>
-        <p>Sixth Sense is an accessibility-focused monitoring system that helps older adults live safely and independently while 
-            allowing caregivers to monitor them remotely. It provides fall detection, contextual assistance, and a 
-            live video feed — all without requiring seniors to learn new technology.</p>
+        <p>Sixth Sense is an accessibility-focused monitoring system that helps older adults live safely and
+            independently while allowing caregivers to monitor them remotely. It provides fall detection, sound alerts,
+            contextual assistance, and a live video feed — all without requiring seniors to learn new technology.</p>
         <button class="cta-btn">Get Sixth Sense</button>
     </header>
 
+    <!-- ========================================
+         FEATURES SECTION
+         Key product benefits
+         ======================================== -->
     <section id="features">
         <h2 class="section-title">Why Sixth Sense Works</h2>
-        <p class="section-sub">A passive, always-on system designed to protect independence while keeping families informed — 
+        <p class="section-sub">A passive, always-on system designed to protect independence while keeping families
+            informed —
             not overwhelmed.</p>
 
         <div class="features">
             <div class="feature-box">
                 <h3 class="feature-title">📡 Fall & Distress Detection</h3>
-                <p>Monitors for potential falls, and sudden movements using camera and audio analysis. Alerts 
-                    caregivers instantly when something may be wrong.</p>
+                <p>Monitors for potential falls, sudden movements, or distress sounds using camera and audio analysis.
+                    Alerts caregivers instantly when something may be wrong.</p>
+            </div>
+            <div class="feature-box">
+                <h3 class="feature-title">🔊 Sound-Based Alerts</h3>
+                <p>Detects yelling, calls for help, and unusual sounds to provide an additional layer of safety beyond
+                    motion or video alone.</p>
             </div>
             <div class="feature-box">
                 <h3 class="feature-title">📝 Contextual Assistance</h3>
-                <p>Helps users with mobility or vision challenges by identifying objects and describing surroundings on demand.</p>
+                <p>Helps users with mobility or vision challenges by identifying objects and describing surroundings on
+                    demand.</p>
             </div>
             <div class="feature-box">
                 <h3 class="feature-title">♿ Accessibility-First</h3>
-                <p>Designed for older adults: simple, intuitive, and unobtrusive. Technology adapts to the user — never the 
-                    other way around.</p>
+                <p>Designed for older adults: simple, intuitive, and unobtrusive. Technology adapts to the user — never
+                    the other way around.</p>
             </div>
         </div>
     </section>
 
+    <!-- ========================================
+         TECH SECTION
+         How the technology works - diagonal skew design
+         ======================================== -->
     <section class="diagonal" id="tech">
         <h2 class="section-title">How It Works</h2>
-        <p class="section-sub">Local video and audio analysis combined with an intuitive caregiver app. Sixth Sense supports 
+        <p class="section-sub">Local video and audio analysis combined with an intuitive caregiver app. Sixth Sense
+            supports
             safety without invasive monitoring.</p>
 
         <div class="tech-grid">
             <div class="tech-item">
                 <h3>📷 Vision Processing</h3>
-                <p>A Raspberry Pi processes a live camera feed to detect falls, motion patterns, and environmental context.</p>
+                <p>A Raspberry Pi processes a live camera feed to detect falls, motion patterns, and environmental
+                    context.</p>
             </div>
             <div class="tech-item">
+                <<<<<<< HEAD=======<h3>🎤 Audio Detection</h3>
+                    <p>Identifies distress sounds such as yelling or calls for help via lightweight on-device audio
+                        analysis.</p>
+            </div>
+            <div class="tech-item">
+                >>>>>>> a876621 (676767)
                 <h3>🧠 React + TypeScript App</h3>
-                <p>A mobile-focused interface built with React, TypeScript, Tailwind, and Radix UI for caregivers to view 
-                live video, check activity, and receive alerts.</p>
+                <p>A mobile-focused interface built with React, TypeScript, Tailwind, and Radix UI for caregivers to
+                    view
+                    live video, check activity, and receive alerts.</p>
             </div>
             <div class="tech-item">
                 <h3>📞 Smart Notifications</h3>
-                <p>Alerts caregivers when falls, or unusual inactivity are detected, helping them respond 
-                quickly when needed.</p>
+                <<<<<<< HEAD <p>Alerts caregivers when falls, or unusual inactivity are detected, helping them respond
+                    quickly when needed.</p>
+                    =======
+                    <p>Alerts caregivers when falls, distress sounds, or unusual inactivity are detected, helping them
+                        respond
+                        quickly when needed.</p>
+                    >>>>>>> a876621 (676767)
             </div>
         </div>
     </section>
 
+    <!-- ========================================
+         APP PREVIEW SECTION
+         ======================================== -->
     <section id="app">
         <h2 class="section-title">The Sixth Sense App</h2>
-        <p class="section-sub">Built for caregivers — not seniors. The app provides a simple, clear dashboard with video feed, 
+        <p class="section-sub">Built for caregivers — not seniors. The app provides a simple, clear dashboard with video
+            feed,
             motion status, search/describe tools, and real-time alerts.</p>
 
-        <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/068/159/datas/gallery.jpg" alt="App Preview" class="app-img" style="border-radius:10px"/>
+        <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/068/159/datas/gallery.jpg"
+            alt="App Preview" class="app-img" style="border-radius:10px" />
     </section>
 
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
     <footer>
         Sixth Sense © 2025 — Designed to support independence with dignity.
     </footer>
 
-    <script>
-        // Parallax effect for background shapes and dots
-        document.addEventListener('mousemove', (e) => {
-            const mouseX = e.clientX / window.innerWidth;
-            const mouseY = e.clientY / window.innerHeight;
+    <<<<<<< HEAD=======<!--========================================INTERACTIVE JAVASCRIPT Parallax effect for background
+        elements========================================-->
+        >>>>>>> a876621 (676767)
+        <script>
+            /**
+             * Parallax mouse tracking effect
+             * Moves background shapes and dots based on cursor position
+             */
+            document.addEventListener('mousemove', (e) => {
+                // Calculate normalized mouse position (0 to 1)
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
 
-            const shape1 = document.querySelector('.shape1');
-            const shape2 = document.querySelector('.shape2');
-            const shape3 = document.querySelector('.shape3');
-            const shape4 = document.querySelector('.shape4');
+<<<<<<< HEAD
+=======
+            // Get all shape elements
+>>>>>>> a876621 (676767)
+                const shape1 = document.querySelector('.shape1');
+                const shape2 = document.querySelector('.shape2');
+                const shape3 = document.querySelector('.shape3');
+                const shape4 = document.querySelector('.shape4');
 
-            if (shape1) shape1.style.transform = `rotate(-15deg) translate(${(mouseX - 0.5) * 30}px, ${(mouseY - 0.5) * 30}px)`;
-            if (shape2) shape2.style.transform = `rotate(25deg) translate(${(mouseX - 0.5) * -40}px, ${(mouseY - 0.5) * -40}px)`;
-            if (shape3) shape3.style.transform = `rotate(-20deg) translate(${(mouseX - 0.5) * 25}px, ${(mouseY - 0.5) * 25}px)`;
-            if (shape4) shape4.style.transform = `rotate(45deg) translate(${(mouseX - 0.5) * -35}px, ${(mouseY - 0.5) * -35}px)`;
+<<<<<<< HEAD
+                if (shape1) shape1.style.transform = `rotate(-15deg) translate(${(mouseX - 0.5) * 30}px, ${(mouseY - 0.5) * 30}px)`;
+                if (shape2) shape2.style.transform = `rotate(25deg) translate(${(mouseX - 0.5) * -40}px, ${(mouseY - 0.5) * -40}px)`;
+                if (shape3) shape3.style.transform = `rotate(-20deg) translate(${(mouseX - 0.5) * 25}px, ${(mouseY - 0.5) * 25}px)`;
+                if (shape4) shape4.style.transform = `rotate(45deg) translate(${(mouseX - 0.5) * -35}px, ${(mouseY - 0.5) * -35}px)`;
 
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, index) => {
+                    const intensity = (index + 1) * 15;
+                    dot.style.transform = `translate(${(mouseX - 0.5) * intensity}px, ${(mouseY - 0.5) * intensity}px)`;
+=======
+            // Apply parallax movement to shape 1
+            if (shape1) {
+                const moveX = (mouseX - 0.5) * 30; // Movement intensity: 30px max
+                const moveY = (mouseY - 0.5) * 30;
+                shape1.style.transform = `rotate(-15deg) translate(${moveX}px, ${moveY}px)`;
+            }
+
+            // Apply parallax movement to shape 2 (opposite direction)
+            if (shape2) {
+                const moveX = (mouseX - 0.5) * -40; // Negative for reverse direction
+                const moveY = (mouseY - 0.5) * -40;
+                shape2.style.transform = `rotate(25deg) translate(${moveX}px, ${moveY}px)`;
+            }
+
+            // Apply parallax movement to shape 3
+            if (shape3) {
+                const moveX = (mouseX - 0.5) * 25;
+                const moveY = (mouseY - 0.5) * 25;
+                shape3.style.transform = `rotate(-20deg) translate(${moveX}px, ${moveY}px)`;
+            }
+
+            // Apply parallax movement to shape 4 (opposite direction)
+            if (shape4) {
+                const moveX = (mouseX - 0.5) * -35;
+                const moveY = (mouseY - 0.5) * -35;
+                shape4.style.transform = `rotate(45deg) translate(${moveX}px, ${moveY}px)`;
+            }
+
+            // Apply parallax movement to accent dots with varying intensity
             const dots = document.querySelectorAll('.dot');
             dots.forEach((dot, index) => {
-                const intensity = (index + 1) * 15;
-                dot.style.transform = `translate(${(mouseX - 0.5) * intensity}px, ${(mouseY - 0.5) * intensity}px)`;
+                const intensity = (index + 1) * 15; // Each dot moves at different speed
+                const moveX = (mouseX - 0.5) * intensity;
+                const moveY = (mouseY - 0.5) * intensity;
+                dot.style.transform = `translate(${moveX}px, ${moveY}px)`;
+>>>>>>> a876621 (676767)
+                });
             });
-        });
-    </script>
+        </script>
 </body>
 
 </html>
