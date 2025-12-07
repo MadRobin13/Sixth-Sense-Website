@@ -601,26 +601,19 @@
                     context.</p>
             </div>
             <div class="tech-item">
-                <<<<<<< HEAD=======<h3>🎤 Audio Detection</h3>
-                    <p>Identifies distress sounds such as yelling or calls for help via lightweight on-device audio
-                        analysis.</p>
+                <h3>🎤 Audio Detection</h3>
+                <p>Identifies distress sounds such as yelling or calls for help via lightweight on-device audio
+                    analysis.</p>
             </div>
             <div class="tech-item">
-                >>>>>>> a876621 (676767)
                 <h3>🧠 React + TypeScript App</h3>
                 <p>A mobile-focused interface built with React, TypeScript, Tailwind, and Radix UI for caregivers to
-                    view
-                    live video, check activity, and receive alerts.</p>
+                    view live video, check activity, and receive alerts.</p>
             </div>
             <div class="tech-item">
                 <h3>📞 Smart Notifications</h3>
-                <<<<<<< HEAD <p>Alerts caregivers when falls, or unusual inactivity are detected, helping them respond
-                    quickly when needed.</p>
-                    =======
-                    <p>Alerts caregivers when falls, distress sounds, or unusual inactivity are detected, helping them
-                        respond
-                        quickly when needed.</p>
-                    >>>>>>> a876621 (676767)
+                <p>Alerts caregivers when falls, distress sounds, or unusual inactivity are detected, helping them
+                    respond quickly when needed.</p>
             </div>
         </div>
     </section>
@@ -645,39 +638,26 @@
         Sixth Sense © 2025 — Designed to support independence with dignity.
     </footer>
 
-    <<<<<<< HEAD=======<!--========================================INTERACTIVE JAVASCRIPT Parallax effect for background
-        elements========================================-->
-        >>>>>>> a876621 (676767)
-        <script>
-            /**
-             * Parallax mouse tracking effect
-             * Moves background shapes and dots based on cursor position
-             */
-            document.addEventListener('mousemove', (e) => {
-                // Calculate normalized mouse position (0 to 1)
-                const mouseX = e.clientX / window.innerWidth;
-                const mouseY = e.clientY / window.innerHeight;
+    <!-- ========================================
+         INTERACTIVE JAVASCRIPT
+         Parallax effect for background elements
+         ======================================== -->
+    <script>
+        /**
+         * Parallax mouse tracking effect
+         * Moves background shapes and dots based on cursor position
+         */
+        document.addEventListener('mousemove', (e) => {
+            // Calculate normalized mouse position (0 to 1)
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
 
-<<<<<<< HEAD
-=======
             // Get all shape elements
->>>>>>> a876621 (676767)
-                const shape1 = document.querySelector('.shape1');
-                const shape2 = document.querySelector('.shape2');
-                const shape3 = document.querySelector('.shape3');
-                const shape4 = document.querySelector('.shape4');
+            const shape1 = document.querySelector('.shape1');
+            const shape2 = document.querySelector('.shape2');
+            const shape3 = document.querySelector('.shape3');
+            const shape4 = document.querySelector('.shape4');
 
-<<<<<<< HEAD
-                if (shape1) shape1.style.transform = `rotate(-15deg) translate(${(mouseX - 0.5) * 30}px, ${(mouseY - 0.5) * 30}px)`;
-                if (shape2) shape2.style.transform = `rotate(25deg) translate(${(mouseX - 0.5) * -40}px, ${(mouseY - 0.5) * -40}px)`;
-                if (shape3) shape3.style.transform = `rotate(-20deg) translate(${(mouseX - 0.5) * 25}px, ${(mouseY - 0.5) * 25}px)`;
-                if (shape4) shape4.style.transform = `rotate(45deg) translate(${(mouseX - 0.5) * -35}px, ${(mouseY - 0.5) * -35}px)`;
-
-                const dots = document.querySelectorAll('.dot');
-                dots.forEach((dot, index) => {
-                    const intensity = (index + 1) * 15;
-                    dot.style.transform = `translate(${(mouseX - 0.5) * intensity}px, ${(mouseY - 0.5) * intensity}px)`;
-=======
             // Apply parallax movement to shape 1
             if (shape1) {
                 const moveX = (mouseX - 0.5) * 30; // Movement intensity: 30px max
@@ -713,10 +693,9 @@
                 const moveX = (mouseX - 0.5) * intensity;
                 const moveY = (mouseY - 0.5) * intensity;
                 dot.style.transform = `translate(${moveX}px, ${moveY}px)`;
->>>>>>> a876621 (676767)
-                });
             });
-        </script>
+        });
+    </script>
 </body>
 
 </html>
